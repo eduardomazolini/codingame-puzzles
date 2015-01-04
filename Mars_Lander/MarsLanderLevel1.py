@@ -9,6 +9,7 @@ for i in range(N):
     # LAND_Y: Y coordinate of a surface point. By linking all the points together in a sequential fashion, you form the surface of Mars.
     LAND_X, LAND_Y = [int(i) for i in input().split()]
 
+FREIA=False
 # game loop
 while 1:
     # HS: the horizontal speed (in m/s), can be negative.
@@ -20,14 +21,12 @@ while 1:
     
     # Write an action using print
     # To debug: print("Debug messages...", file=sys.stderr)
-    if (VS < -39):
+    if (VS < -44):
+        FREIA=True
+
+        
+    if ((VS < -39) and FREIA):
         POWER = '4'
-    elif (VS < -30):
-        POWER = '0'
-    elif (VS < -20):
-        POWER = '0'
-    elif (VS < -10):
-        POWER = '0'
     else:
         POWER = '0'
             
